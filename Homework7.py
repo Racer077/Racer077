@@ -8,7 +8,15 @@ def read_last(lines, file):
 n = int(input())
 read_last(n, r'C:\Users\Елизавета\Desktop\article.txt')
 #№2#
-#Выберите любую папку на своем компьютере, имеющую вложенные директории. Выведите на печать в терминал ее содержимое, как и всех подкаталогов при помощи функции print_docs(directory).
+import os
+def print_docs(directory):
+    all_files = os.walk(directory)
+    for catalog in all_files:
+        print(f'Папка {catalog} [0] содержит:')
+        print(f'Директории: {", ".join([f for f in catalog])}')
+        print(f'Файлы: {", ".join([file for file in catalog])}')
+        print('-' * 40)
+print_docs('C:\Users\Елизавета\Desktop\polyteh.py\Racer077')
 #№3#
 def longest_words(file):
     f = open(file, 'r', encoding='utf-8')

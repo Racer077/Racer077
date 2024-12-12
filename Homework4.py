@@ -1,7 +1,7 @@
 #№1#
 import re
 text = input()
-print(f'новая строчка:{text.replace('н', '!')}, кол-во символов:{len(max(re.findall(r'н+', text)))}')
+print(f'Новая строчка:{text.replace('н', '!')}, количество символов:{len(max(re.findall(r'н+', text)))}')
 #№2#
 def extract_inside_brackets(s):
     start = s.find('(')
@@ -11,7 +11,7 @@ def extract_inside_brackets(s):
         print(result)
     else:
         print("Скобки не найдены.")
-input_string = "Тест (внутри скобок)."
+input_string = "Текст (внутри скобок)."
 extract_inside_brackets(input_string)
 #№3#
 import re
