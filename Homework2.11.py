@@ -1,4 +1,4 @@
-#1#
+#№1#
 class Point2D:
     def __init__(self, x, y):
         self.x = x
@@ -29,7 +29,9 @@ if __name__ == '__main__':
         print(pt3.__dict__)
     except AttributeError as e:
         print(f"Ошибка доступа к __dict__: {e}")
-#2#
+
+
+#№2#
 import timeit
 import sys
 class NormalPoint:
@@ -71,7 +73,9 @@ if __name__ == '__main__':
         slot_point.z = 3 
     except AttributeError as e:
         print(f"Ошибка при попытке добавить новый атрибут в SlotPoint: {e}")
-#3#
+
+
+#№3#
 class Student:
     __slots__ = ('name', 'age', 'grade')
 
@@ -80,17 +84,8 @@ class Student:
         self.age = age
         self.grade = grade
 def calculate_average_grade(students):
-    """Вычисляет среднюю оценку студентов в коллекции.
-
-    Args:
-        students: Список объектов Student.
-
-    Returns:
-        Средняя оценка студентов, или 0, если список пуст.
-    """
     if not students:
         return 0
-
     total_grade = sum(student.grade for student in students)
     return total_grade / len(students)
 if __name__ == '__main__':
@@ -102,7 +97,9 @@ if __name__ == '__main__':
     ]
     average_grade = calculate_average_grade(students)
     print(f"Средняя оценка студентов: {average_grade}")
-#4#
+
+
+#№4#
 class Product:
     __slots__ = ('name', 'price', 'quantity')
 
@@ -111,13 +108,6 @@ class Product:
         self.price = price
         self.quantity = quantity
 def find_products_above_threshold(products_dict, price_threshold):
-    """Находит названия товаров, цена которых превышает заданный порог.
-    Args:
-        products_dict: Словарь, где ключи - названия товаров, а значения - объекты Product.
-        price_threshold: Пороговая цена.
-    Returns:
-        Список названий товаров, цена которых выше price_threshold.
-    """
     product_names = [
         name for name, product in products_dict.items() if product.price > price_threshold
     ]
